@@ -1,0 +1,94 @@
+//------------------------------------------------
+//--- 010 Editor v7.0 Binary Template
+//
+//      File: 
+//   Authors: 
+//   Version: 
+//   Purpose: 
+//  Category: 
+// File Mask: 
+//  ID Bytes: 
+//   History: 
+//------------------------------------------------
+
+struct enditle {
+    char desc[8];
+    int length;
+    int unknown;
+};
+
+struct packhedr {
+    char desc[8];
+    int length;
+    int unknown_1;
+    int unknown_2;
+    int unknown_3;
+    int first_file_offset;
+    int unknown_5;
+    int unknown_6;
+    int unknown_7;
+    int unknown_8;
+    int unknown_9;
+};
+
+struct genestr {
+    char desc[8];
+    int length;
+    int unknown_1;
+    int object_count;
+    int unknown_2;
+    int str_table_offset;
+    int length_2;
+    int str_offsets[object_count];
+};
+
+//Package Table Of Contents
+struct packtoc {
+    char desc[8];
+    int length;
+    int unknown_1;
+    int object_size;
+    int object_count;
+    int unknown_2;
+    int unknown_3;
+    
+};
+
+struct packfsls {
+    char desc[8];
+    int length;
+    int unknown[5];
+};
+
+struct descriptor{
+    //SetForeColor(cRed);
+    // notes on identifier_1
+    // 0x200 == file to be extraced
+    // 0x01 ... not sure
+    SetForeColor(cBlue);
+    int identifier_1 <format=hex>;
+    SetForeColor(cNone);
+    int count <format=hex>;
+    int unknown_1 <format=hex>;
+    int unknown_2 <format=hex>;
+    SetForeColor(cRed);
+    int file_offset <format=hex>;
+    SetForeColor(cNone);
+    int unknown_3 <format=hex>;
+    int decompressed_length <format=hex>;
+    int unknown_5 <format=hex>;
+    int compressed_len <format=hex>;
+    int unknown_7 <format=hex>;
+    //SetForeColor(cNone);
+};
+
+//Sections seem to be padded on 0x10 byte boundaries!
+
+//First header
+enditle a;
+packhedr b;
+packtoc c;
+descriptor test[c.object_count];
+packfsls d;
+genestr e;
+//table for strings starts at genestr.str_table_offset, the values in str_offsets are the offsets to the strings from the beginning of the table.
