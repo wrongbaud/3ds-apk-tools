@@ -1,4 +1,4 @@
-#apk-tools
+# apk-tools
 ----
 Tools for unpacking and repacking APK files found on various 3DS roms
 
@@ -16,7 +16,7 @@ See the following forum post for a decent tutorial on how to extract and rebuild
 * https://gbatemp.net/threads/tutorial-how-to-decrypt-extract-rebuild-3ds-roms.383055/
 
 ----
-##Gundam: The 3D Battle - Project notes and such...
+## Gundam: The 3D Battle - Project notes and such...
 
 * We are currently able to exctract textures from apk files, modify them, and then use these modified files using HANS.
 
@@ -41,7 +41,7 @@ This issue was explained to me through someone on GBATemp (See link below):
 LayeredFS is a plugin for NTR CFW that allows users to swap out individual files on their romFS with ones placed on the SD card, this is really useful for testing mods and would be beneficial to our long term workflow. The only problem is that it does not find all of the proper symbols in our Gundam rom in order to provide the necessary hooks to the CFW. The next step for us (if we want to employ this method) is to find the necessarry symbols for the ROM and enter them manually. The codebase is relatively straightforward and should work on a Linux host (I have modified the build scripts to work with a Linux system as opposed to it's original design which was Windows...
 
 ---
-##Helpful Links for future work:
+## Helpful Links for future work:
 * https://gbatemp.net/threads/how-to-create-and-use-a-layeredfs-plugin.389977/
 * https://gbatemp.net/threads/release-ntr-cfw-3-2-with-experimental-real-time-save-feature.385142/
 * https://github.com/44670/layeredFS/wiki/manual
