@@ -274,7 +274,7 @@ class apk_file:
                     return 0
         logger.info("Finished exporting APK Files")
 
-    ###NOTE: NOT TESTED -- I DO NOT RECCOMEND CURRENTLY FUCKING WITH THIS
+    ###NOTE: NOT TESTED
     ### THIS ASSUMES THAT THE NEW FILE HAS THE SAME OR LESS COMPRESSED SIZE!
     def _import_apk(self,current_file,new_file):
         if self.apk != None:
